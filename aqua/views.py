@@ -16,11 +16,11 @@ auth = firebase.auth
 database = firebase.database()
 
 def index(request):
-  name = database.child('Data').child('Name').get().val()
-  age = database.child('Data').child('Age').get().val()
-  birthday = database.child('Data').child('Birthday').get().val()
+  ph = database.child('Data').child('PH').get().val()
+  temperatura = database.child('Data').child('TEMPERATURA').get().val()
+  umidade = database.child('Data').child('UMIDADE').get().val()
   return render(request, 'index.html', {
-    'name': name,
-    'age': age,
-    'birthday': birthday
+    'ph': ph,
+    'temperatura': temperatura,
+    'umidade': umidade
   })

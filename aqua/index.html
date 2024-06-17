@@ -1,14 +1,95 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 		<title>AQUA</title>
+
+		<!-- Bootstrap -->
+		<link href="{% static 'bootstrap-icons.css' %}" rel="stylesheet" />
+		<link href="{% static 'bootstrap.min.css' %}" rel="stylesheet" />
+		<script src="{% static 'bootstrap.min.js' %}" defer></script>
 	</head>
 	<body>
-		<h1>Integrando Firebase com Django</h1>
-		<p>Nome: {{name}}</p>
-		<p>Idade: {{age}}</p>
-		<p>Aniversário: {{birthday}}</p>
+		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">AQUA</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNav"
+					aria-controls="navbarNav"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="#">Geral</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Gráficos</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Estatísticas</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container mt-4">
+			<section id="lobby">
+				<div
+					id="cards"
+					class="d-flex justify-content-center align-items-center gap-3 mt-3"
+				>
+					<div class="card" style="width: 18rem">
+						<div
+							class="card-body d-flex justify-content-center align-items-center gap-3"
+						>
+							<i class="bi bi-clipboard-data fs-1"></i>
+							<div>
+								<h5 class="card-title">PH: {{ph}}</h5>
+								<p class="card-text">Este é o PH retirado do banco de dados.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="card" style="width: 18rem">
+						<div
+							class="card-body d-flex justify-content-center align-items-center gap-3"
+						>
+							<i class="bi bi-thermometer-half fs-1"></i>
+							<div>
+								<h5 class="card-title">Temperatura: {{temperatura}}</h5>
+								<p class="card-text">
+									Esta é a temperatura retirada do banco de dados.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="card" style="width: 18rem">
+						<div
+							class="card-body d-flex justify-content-center align-items-center gap-3"
+						>
+							<i class="bi bi-droplet fs-1"></i>
+							<div>
+								<h5 class="card-title">Umidade: {{umidade}}</h5>
+								<p class="card-text">
+									Esta é a umidade retirada do banco de dados.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
 	</body>
 </html>
